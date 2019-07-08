@@ -1,0 +1,2 @@
+In most cases you do not need to look further to install Java on Ubuntu than Ubuntu's repository which contains an opensource version of Java runtime binaries called Open JDK. 
+To install Ubuntu Java Open JDK version 11 execute
