@@ -131,7 +131,7 @@
 
 
 
-#hadoop command 
+# hadoop command 
     hadoop version
     hdfs dfs -ls /
     hdfs dfs -
