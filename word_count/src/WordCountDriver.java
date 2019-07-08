@@ -5,7 +5,7 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.job;
+import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
@@ -24,7 +24,7 @@ public class WordCountDriver extends Configured implements Tool{
     }   
 
     @Override
-    public int run(){
+    public int run(String[] args)throws Exception {
         if(args.length<2){
             System.err.printf("Invalid arguments\n",getClass().getName());
             ToolRunner.printGenericCommandUsage(System.err);
@@ -39,6 +39,7 @@ public class WordCountDriver extends Configured implements Tool{
 
         job.setJarByClass(WordCountDriver.class);
         job.setMapperClass(WordCountMapper.class);
+
         job.setReducerClass(WordCountReducer.class);
 
         job.setOutputKeyClass(Text.class);
