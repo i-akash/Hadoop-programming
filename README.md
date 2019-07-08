@@ -160,7 +160,7 @@
         stop-dfs.sh
         stop-yarn.sh        
 
-#interface
+# interface
     localhost:50070 (namenode)
     localhost:8088 (resource manger)
     localhost:50090/logs (logs)
