@@ -21,21 +21,21 @@
     sudo adduser hadoop sudo    
 
 
-#ssh
+# ssh
     sudo apt install ssh
     
     ssh-keygen -t rsa -P ""
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-    #checking
+    # checking
     ssh localhost
 
 
-#hadoop install
+# hadoop install
     # extract hadoop
         sudo tar -xvf hadoop-2.7.1.tar.gz
 
-    #create folder hadoop under /usr/local
+    # create folder hadoop under /usr/local
         move hadoop(extract folder) to /usr/local/hadoop
 
         sudo mv ~/hadoop-2.7.1/*  /usr/local/hadoop/
@@ -43,7 +43,7 @@
     # change ownership to hadoop user
     sudo chown -R username(:group) pathOfFolder
 
-    #set Hadoop variables in .bashrc
+    # set Hadoop variables in .bashrc
         #HADOOP VARIABLES
         export HADOOP_HOME=/usr/local/hadoop
         export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
@@ -59,13 +59,13 @@
 
 # file modification  
 
-        #hadoop-env.sh 
+        # hadoop-env.sh 
             export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-        #make tmp directory 
+        # make tmp directory 
             sudo mkdir -p   /app/hadoop/tmp
 
-        #core-site.xml
+        # core-site.xml
             <configuration>
                 <property>
                         <name>hadoop.tmp.dir</name>
@@ -78,7 +78,7 @@
             </configuration>
 
 
-        #mapred-site.xml (cp mapred-site.xml.template mapred-site.xml)
+        # mapred-site.xml (cp mapred-site.xml.template mapred-site.xml)
             
             <configuration>
                 <property>
@@ -91,7 +91,7 @@
                 </property>
             </configuration>
 
-        #hdfs-site.xml  
+        # hdfs-site.xml  
             make 2 dir under /usr/local/hadoop_store/hdfs/ namenode & datanode
 
             <configuration>
@@ -111,7 +111,7 @@
             </configuration>
 
 
-        #yarn-site.xml
+        # yarn-site.xml
             <configuration>
                     <property>
                             <name>yarn.nodemanager.aux-services</name>
@@ -122,7 +122,7 @@
 
 
 
-#formating hadoop file system   
+# formating hadoop file system   
     hdfs namenode -format
 
 
